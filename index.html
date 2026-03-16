@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassBuddy | 让课堂参与看得见</title>
+    <meta
+      name="description"
+      content="ClassBuddy 将课堂表现游戏化，用电子宠物成长、实时荣誉榜与进化动画，让学生更投入，让教师更轻松。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html#hero" aria-label="ClassBuddy 首页">
+          <span class="brand-mark">CB</span>
+          <span class="brand-text">
+            <strong>ClassBuddy</strong>
+            <span>课堂电子宠物平台</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a href="product.html">产品能力</a>
+          <a href="teacher-console.html">教师后台</a>
+          <a href="enterprise.html">校园版</a>
+          <a href="index.html#pricing">商业方案</a>
+        </nav>
+        <a class="button ghost" href="#contact">预约演示</a>
+      </header>
+
+      <main>
+        <section class="hero section" id="hero">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Gamified Classroom Management</p>
+            <h1>把学生的每一次进步，变成一只会成长的课堂英雄。</h1>
+            <p class="lead">
+              ClassBuddy 让教师用一键奖励、实时看板和宠物进化机制，把抽象的课堂表现转化为可见、可感、可持续的成长体验。
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#pricing">查看方案</a>
+              <a class="button secondary" href="#showcase">体验交互</a>
+            </div>
+            <ul class="hero-metrics">
+              <li>
+                <strong>4 大</strong>
+                <span>课堂奖励维度</span>
+              </li>
+              <li>
+                <strong>3 阶段</strong>
+                <span>宠物自动进化</span>
+              </li>
+              <li>
+                <strong>全班实时</strong>
+                <span>荣誉看板联动</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-stage reveal">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+            <div class="dashboard-card">
+              <div class="dashboard-top">
+                <span class="badge">教师控制台</span>
+                <span class="mini-status" id="heroClassStatus">在线 · 6A 班</span>
+              </div>
+              <div class="pet-panel">
+                <div class="pet-illustration">
+                  <div class="pet pet-stage-2" id="heroPet" data-evolution="2">
+                    <span class="pet-face pet-face-left"></span>
+                    <span class="pet-face pet-face-right"></span>
+                    <span class="pet-core"></span>
+                  </div>
+                </div>
+                <div class="pet-details">
+                  <p id="heroPetSeries">今日课堂伙伴</p>
+                  <h2 id="heroPetName">星巡犬 · Milo</h2>
+                  <div class="energy-bar">
+                    <span id="heroEnergyBar" style="width: 72%"></span>
+                  </div>
+                  <div class="energy-meta">
+                    <strong id="heroEnergyValue">108 Energy</strong>
+                    <span id="heroStageLabel">成长期</span>
+                  </div>
+                </div>
+              </div>
+              <div class="reward-grid">
+                <button type="button">积极发言 +10</button>
+                <button type="button">作业优秀 +20</button>
+                <button type="button">小组协作 +15</button>
+                <button type="button">遵守纪律 +5</button>
+              </div>
+              <div class="hall-card">
+                <div class="hall-head">
+                  <strong>Hall of Fame</strong>
+                  <span id="heroHallMeta">实时班级排名</span>
+                </div>
+                <ol id="heroRankList">
+                  <li><span>1. Luna</span><strong>168</strong></li>
+                  <li><span>2. Milo</span><strong>108</strong></li>
+                  <li><span>3. Coco</span><strong>93</strong></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section trust-strip reveal">
+          <p>适用于班主任、学科教师、年级负责人和校园管理者</p>
+          <div class="trust-items">
+            <span>课堂激励</span>
+            <span>成长可视化</span>
+            <span>跨班级联赛</span>
+            <span>AI 宠物定制</span>
+          </div>
+        </section>
+
+        <section class="section page-hub">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Site Map</p>
+            <h2>不只是一张首页，而是一套可以拿去讲产品、讲能力、讲商业化的整站结构</h2>
+          </div>
+          <div class="hub-grid">
+            <a class="hub-card reveal" href="product.html">
+              <span class="feature-index">01</span>
+              <h3>产品能力页</h3>
+              <p>完整拆解学生管理、奖励体系、进化逻辑、实时看板和技术方向，适合对外介绍方案。</p>
+            </a>
+            <a class="hub-card reveal" href="teacher-console.html">
+              <span class="feature-index">02</span>
+              <h3>教师后台演示页</h3>
+              <p>模拟课堂操作界面、班级排行和奖励动作，让投资人、客户或团队直观看到使用场景。</p>
+            </a>
+            <a class="hub-card reveal" href="enterprise.html">
+              <span class="feature-index">03</span>
+              <h3>校园版页面</h3>
+              <p>聚焦校级部署、跨班级联赛、统一后台和实施服务，强化企业级成交叙事。</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" id="features">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Product Highlights</p>
+            <h2>围绕“参与感、荣誉感、持续性”设计的课堂增长引擎</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <span class="feature-index">01</span>
+              <h3>学生与宠物一一绑定</h3>
+              <p>
+                支持手动录入与 Excel 批量导入，每个学生生成唯一成长档案，领养专属宠物后持续累计能量值。
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-index">02</span>
+              <h3>一键奖励，教学不中断</h3>
+              <p>
+                积极发言、作业优秀、小组协作、遵守纪律等场景均可快捷加分，支持多人同时选定奖励。
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-index">03</span>
+              <h3>三阶段进化驱动持续投入</h3>
+              <p>
+                宠物会随着能量值成长为更强形态，用可见变化代替口头鼓励，让进步真正“被看见”。
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-index">04</span>
+              <h3>荣誉看板强化班级氛围</h3>
+              <p>
+                全班宠物实时排名，结合全屏觉醒动画和集体任务机制，打造更有参与感的课堂仪式。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section showcase" id="showcase">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Live Demo</p>
+            <h2>把产品说明书，变成老师一眼就能理解的价值体验</h2>
+          </div>
+          <div class="showcase-grid">
+            <div class="evolution-panel reveal">
+              <div class="panel-top">
+                <div>
+                  <p class="panel-label">宠物进化演示</p>
+                  <h3>星巡犬成长路径</h3>
+                </div>
+                <span class="signal">动态预览</span>
+              </div>
+              <div class="evolution-stage">
+                <div class="pet-stage-screen">
+                  <div class="pet" id="demoPet">
+                    <span class="pet-face pet-face-left"></span>
+                    <span class="pet-face pet-face-right"></span>
+                    <span class="pet-core"></span>
+                  </div>
+                  <div class="stage-glow"></div>
+                </div>
+                <div class="stage-copy">
+                  <span id="stageTag">阶段一 · 幼年期</span>
+                  <strong id="energyValue">48 Energy</strong>
+                  <p id="stageDescription">
+                    形象呆萌、体型较小、无特殊装备，是刚被激励点燃的小小潜力股。
+                  </p>
+                </div>
+              </div>
+              <div class="stage-switcher" role="tablist" aria-label="进化阶段切换">
+                <button class="stage-button is-active" data-stage="1" type="button">幼年期</button>
+                <button class="stage-button" data-stage="2" type="button">成长期</button>
+                <button class="stage-button" data-stage="3" type="button">完全体</button>
+              </div>
+            </div>
+
+            <div class="insight-panel reveal">
+              <article class="insight-card">
+                <p class="panel-label">教师收益</p>
+                <h3>减少口头管理成本</h3>
+                <p>
+                  奖励行为被标准化后，教师无需频繁中断课堂节奏，管理与激励可以同步完成。
+                </p>
+              </article>
+              <article class="insight-card alt">
+                <p class="panel-label">学生体验</p>
+                <h3>每次努力都有即时反馈</h3>
+                <p>
+                  从分数到宠物成长，再到班级排名，反馈链条完整清晰，更容易建立长期动力。
+                </p>
+              </article>
+              <article class="insight-card accent">
+                <p class="panel-label">校园价值</p>
+                <h3>可扩展到年级与全校荣誉体系</h3>
+                <p>
+                  企业版支持跨班级数据同步与“英雄联赛”，帮助学校形成统一的正向文化场景。
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section architecture">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Tech Direction</p>
+            <h2>从 MVP 到 AI 增强，架构上为商业化预留空间</h2>
+          </div>
+          <div class="architecture-grid">
+            <div class="arch-card reveal">
+              <h3>前端体验层</h3>
+              <p>响应式界面适配投影仪、平板与桌面端，支持课堂实时展示和教师操控。</p>
+            </div>
+            <div class="arch-card reveal">
+              <h3>实时数据层</h3>
+              <p>可接入 Firebase 或 Supabase，满足班级内即时同步、排名更新和成长档案沉淀。</p>
+            </div>
+            <div class="arch-card reveal">
+              <h3>图像生成层</h3>
+              <p>先以高品质素材库完成冷启动，再引入 AI 生图为学生生成独一无二的专属宠物。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section pricing" id="pricing">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Business Model</p>
+            <h2>从个人教师到整校部署，商业路径清晰可扩展</h2>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <span class="price-type">Freemium</span>
+              <h3>基础版</h3>
+              <p class="price-copy">适合个人教师快速启用课堂激励机制</p>
+              <ul>
+                <li>基础学生人数</li>
+                <li>预设宠物品种</li>
+                <li>基础奖励与排名</li>
+              </ul>
+              <a class="button secondary" href="#contact">立即体验</a>
+            </article>
+            <article class="price-card featured reveal">
+              <span class="price-type">Pro</span>
+              <h3>专业版</h3>
+              <p class="price-copy">适合希望深度运营班级文化的教师团队</p>
+              <ul>
+                <li>AI 动态形象生成</li>
+                <li>成长报告导出</li>
+                <li>奖励标准自定义</li>
+              </ul>
+              <a class="button primary" href="#contact">预约顾问</a>
+            </article>
+            <article class="price-card reveal">
+              <span class="price-type">Enterprise</span>
+              <h3>校园版</h3>
+              <p class="price-copy">适合学校统一部署与跨班级数据协同</p>
+              <ul>
+                <li>学校统一管理后台</li>
+                <li>跨班级同步与联赛</li>
+                <li>定制化实施支持</li>
+              </ul>
+              <a class="button secondary" href="#contact">联系销售</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section roadmap" id="roadmap">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Roadmap</p>
+            <h2>按真实产品节奏推进，而不是停留在概念展示</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item reveal">
+              <span>Phase 1</span>
+              <h3>MVP 上线</h3>
+              <p>完成学生录入、手动加分及宠物静态图片切换，快速验证教师使用习惯。</p>
+            </article>
+            <article class="timeline-item reveal">
+              <span>Phase 2</span>
+              <h3>体验升级</h3>
+              <p>补齐平滑进化动画、全屏庆祝特效和更强的课堂反馈仪式感。</p>
+            </article>
+            <article class="timeline-item reveal">
+              <span>Phase 3</span>
+              <h3>AI 集成</h3>
+              <p>引入 AI 辅助生图，形成每个学生都不同的数字宠物身份。</p>
+            </article>
+            <article class="timeline-item reveal">
+              <span>Phase 4</span>
+              <h3>社交扩展</h3>
+              <p>加入班级共同任务与学校联赛，让激励机制从个人成长延伸到集体荣誉。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section cta reveal" id="contact">
+          <div>
+            <p class="eyebrow">Ready To Launch</p>
+            <h2>如果你要把它拿去路演、招商或继续开发，这个网站已经是一个可直接使用的起点。</h2>
+          </div>
+          <div class="cta-actions">
+            <a class="button primary" href="mailto:hello@classbuddy.app">联系 ClassBuddy</a>
+            <a class="button ghost" href="project.md">查看产品说明书</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>ClassBuddy</strong>
+          <p>让课堂参与看得见，让成长激励更有仪式感。</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">首页</a>
+          <a href="product.html">产品能力</a>
+          <a href="teacher-console.html">教师后台</a>
+          <a href="enterprise.html">校园版</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

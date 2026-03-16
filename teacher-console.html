@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClassBuddy 教师后台 | 课堂操作演示</title>
+    <meta
+      name="description"
+      content="查看 ClassBuddy 教师后台演示，包括课堂奖励操作、学生状态、实时排行和进化反馈。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="ClassBuddy 首页">
+          <span class="brand-mark">CB</span>
+          <span class="brand-text">
+            <strong>ClassBuddy</strong>
+            <span>课堂电子宠物平台</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <a href="index.html">首页</a>
+          <a href="product.html">产品能力</a>
+          <a href="teacher-console.html">教师后台</a>
+          <a href="enterprise.html">校园版</a>
+        </nav>
+        <a class="button ghost" href="index.html#contact">预约演示</a>
+      </header>
+
+      <main>
+        <section class="page-hero section page-hero-console">
+          <div class="page-copy reveal">
+            <p class="eyebrow">Teacher Console</p>
+            <h1>老师看到的，不应是一堆表格，而是一个能立刻驱动课堂气氛的控制台。</h1>
+            <p class="lead">
+              这个页面把产品说明书里的操作逻辑翻成真实的使用场景，更适合演示“老师为什么会愿意每天用”。
+            </p>
+          </div>
+          <div class="page-stat-card reveal">
+            <div class="metric-stack">
+              <strong>目标：少操作、快反馈、强氛围</strong>
+              <p>标准奖励动作、学生卡片和班级排行同屏呈现，让管理和激励同步发生。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section console-layout">
+          <div class="console-main reveal">
+            <div class="console-head">
+              <div>
+                <p class="panel-label">6A 班 · 英语课堂</p>
+                <h2>今日课堂管理台</h2>
+              </div>
+              <span class="signal" id="classSignal">0 名学生</span>
+            </div>
+            <div class="console-stats">
+              <div class="stat-chip">
+                <strong id="totalEnergyStat">0</strong>
+                <span>班级总能量</span>
+              </div>
+              <div class="stat-chip">
+                <strong id="selectedCountStat">0</strong>
+                <span>今日奖励次数</span>
+              </div>
+              <div class="stat-chip">
+                <strong id="evolvedCountStat">0</strong>
+                <span>达到进化阈值</span>
+              </div>
+            </div>
+            <div class="console-toolbar">
+              <form class="student-form" id="studentForm">
+                <label class="sr-only" for="studentName">学生姓名</label>
+                <input id="studentName" name="studentName" type="text" placeholder="输入学生姓名，例如：Luna" maxlength="24" />
+                <select id="petType" name="petType" aria-label="选择宠物系列">
+                  <option value="救援犬系列">救援犬系列</option>
+                  <option value="光之巨人系列">光之巨人系列</option>
+                  <option value="魔法精灵系列">魔法精灵系列</option>
+                </select>
+                <button type="submit">新增学生</button>
+              </form>
+              <div class="toolbar-actions">
+                <button class="mini-action" type="button" id="seedDemoData">重置演示数据</button>
+                <button class="mini-action danger" type="button" id="clearAllData">清空全部数据</button>
+              </div>
+            </div>
+            <div class="console-hint" id="consoleHint">
+              先勾选学生，再点击右侧奖励按钮。数据会保存在当前浏览器中。
+            </div>
+            <div class="student-grid" id="studentGrid" aria-live="polite">
+            </div>
+          </div>
+
+          <aside class="console-side reveal">
+            <div class="side-card dark">
+              <p class="panel-label">快捷奖励</p>
+              <h3>一键发放课堂激励</h3>
+              <div class="reward-grid reward-grid-live">
+                <button type="button" data-reward-points="10" data-reward-label="积极发言">积极发言 +10</button>
+                <button type="button" data-reward-points="20" data-reward-label="作业优秀">作业优秀 +20</button>
+                <button type="button" data-reward-points="15" data-reward-label="小组协作">小组协作 +15</button>
+                <button type="button" data-reward-points="5" data-reward-label="遵守纪律">遵守纪律 +5</button>
+              </div>
+              <p class="reward-feedback" id="rewardFeedback">选择学生后可发放奖励。</p>
+            </div>
+            <div class="side-card">
+              <p class="panel-label">实时排行</p>
+              <h3>Hall of Fame</h3>
+              <ol class="rank-list" id="rankList">
+              </ol>
+            </div>
+            <div class="side-card accent-card">
+              <p class="panel-label">课堂瞬间</p>
+              <h3 id="spotlightTitle">进化觉醒待触发</h3>
+              <p id="spotlightText">当学生跨过关键能量阈值时，这里会出现最新的成长播报。</p>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <strong>ClassBuddy</strong>
+          <p>为教师设计的课堂参与操作台，把奖励和管理做成一个动作。</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">首页</a>
+          <a href="product.html">产品能力</a>
+          <a href="enterprise.html">校园版</a>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
