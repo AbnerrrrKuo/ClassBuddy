@@ -32,10 +32,32 @@
           <a href="teacher-console.html">教师后台</a>
           <a href="enterprise.html">校园版</a>
         </nav>
-        <a class="button ghost" href="index.html#contact">预约演示</a>
+        <div class="auth-actions">
+          <span class="auth-badge" id="authBadge">未登录</span>
+          <button class="button ghost" type="button" id="logoutButton" hidden>退出登录</button>
+        </div>
       </header>
 
-      <main>
+      <main class="teacher-console-page">
+        <section class="login-shell section" id="loginShell">
+          <div class="login-card reveal">
+            <p class="eyebrow">Admin Sign In</p>
+            <h1>先登录，再进入教师控制台。</h1>
+            <p class="lead">
+              当前版本是浏览器本地登录流程，适合演示和原型验证。登录成功后即可进入课堂宠物后台。
+            </p>
+            <form class="login-form" id="loginForm">
+              <label class="sr-only" for="loginUsername">管理员账号</label>
+              <input id="loginUsername" name="loginUsername" type="text" placeholder="输入管理员账号" autocomplete="username" />
+              <label class="sr-only" for="loginPassword">管理员密码</label>
+              <input id="loginPassword" name="loginPassword" type="password" placeholder="输入管理员密码" autocomplete="current-password" />
+              <button class="button primary" type="submit">登录教师后台</button>
+            </form>
+            <p class="login-feedback" id="loginFeedback">请输入管理员账号和密码。</p>
+          </div>
+        </section>
+
+        <div id="consoleApp" hidden>
         <section class="page-hero section page-hero-console">
           <div class="page-copy reveal">
             <p class="eyebrow">Teacher Console</p>
@@ -88,7 +110,26 @@
               </form>
               <div class="toolbar-actions">
                 <button class="mini-action" type="button" id="seedDemoData">重置演示数据</button>
+                <button class="mini-action" type="button" id="exportCsvButton">导出 CSV</button>
+                <button class="mini-action" type="button" id="exportJsonButton">导出备份</button>
                 <button class="mini-action danger" type="button" id="clearAllData">清空全部数据</button>
+              </div>
+            </div>
+            <div class="import-panel">
+              <div class="import-copy">
+                <strong>批量导入学生</strong>
+                <p>支持上传 `CSV` 文件，或直接把 Excel 里的姓名/宠物系列/能量三列复制后粘贴进来。`.xlsx` 入口也已预留。</p>
+              </div>
+              <div class="import-controls">
+                <input id="csvFileInput" type="file" accept=".csv,text/csv,.txt,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                <textarea
+                  id="bulkStudentInput"
+                  rows="4"
+                  placeholder="示例：&#10;姓名,宠物系列,能量&#10;Luna,救援犬系列,168&#10;Milo,光之巨人系列,108"
+                ></textarea>
+                <div class="toolbar-actions">
+                  <button class="mini-action" type="button" id="importStudentsButton">导入文本数据</button>
+                </div>
               </div>
             </div>
             <div class="console-hint" id="consoleHint">
@@ -123,6 +164,7 @@
             </div>
           </aside>
         </section>
+        </div>
       </main>
 
       <footer class="footer">
@@ -136,6 +178,18 @@
           <a href="enterprise.html">校园版</a>
         </div>
       </footer>
+    </div>
+
+    <div class="student-modal" id="studentModal" aria-hidden="true">
+      <div class="student-modal-backdrop" data-close-student-modal></div>
+      <div class="student-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="studentModalTitle">
+        <button class="student-modal-close" type="button" data-close-student-modal aria-label="关闭成长档案">关闭</button>
+        <div class="student-modal-content" id="studentModalContent">
+          <p class="panel-label">成长档案</p>
+          <h3 id="studentModalTitle">学生成长档案</h3>
+          <p id="studentModalText">选择学生后可查看完整成长状态。</p>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

@@ -1,0 +1,21 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="220" rx="44" fill="url(#bg)"/>
+  <ellipse cx="110" cy="181" rx="50" ry="15" fill="#16263D" fill-opacity=".16"/>
+  <path d="M110 35L151 71V136C151 160 133 176 110 176C87 176 69 160 69 136V71L110 35Z" fill="url(#body)"/>
+  <path d="M110 48L137 74H83L110 48Z" fill="#FFF7BF"/>
+  <path d="M94 85H126L132 146H88L94 85Z" fill="#EBFDFF"/>
+  <rect x="103" y="88" width="14" height="57" rx="7" fill="#FFC857"/>
+  <circle cx="94" cy="110" r="7" fill="#1D314F"/>
+  <circle cx="126" cy="110" r="7" fill="#1D314F"/>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="16" x2="194" y2="207" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7D6"/>
+      <stop offset="1" stop-color="#D6EBFF"/>
+    </linearGradient>
+    <linearGradient id="body" x1="110" y1="35" x2="110" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7B5"/>
+      <stop offset=".58" stop-color="#9DE7FF"/>
+      <stop offset="1" stop-color="#63A8FF"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -23,6 +23,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -185,6 +189,24 @@ button {
   color: var(--text);
   background: transparent;
   border-color: rgba(17, 32, 56, 0.14);
+}
+
+.auth-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(17, 32, 56, 0.05);
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
 }
 
 .section {
@@ -391,6 +413,29 @@ button {
     0 26px 45px rgba(255, 116, 72, 0.35);
   transform-origin: center bottom;
   animation: float 4.2s ease-in-out infinite;
+}
+
+.pet.pet-asset {
+  width: 160px;
+  height: 160px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.pet.pet-asset::before,
+.pet.pet-asset::after,
+.pet.pet-asset .pet-face,
+.pet.pet-asset .pet-core {
+  display: none;
+}
+
+.pet-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(17, 32, 56, 0.18));
 }
 
 .pet::before,
@@ -697,6 +742,65 @@ button {
   min-height: 44vh;
 }
 
+.teacher-console-page {
+  min-height: 70vh;
+}
+
+.login-shell {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 180px);
+}
+
+.login-card {
+  width: min(560px, 100%);
+  padding: 34px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  background:
+    linear-gradient(180deg, rgba(13, 23, 37, 0.96), rgba(21, 32, 52, 0.92)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent);
+  color: var(--white);
+  box-shadow: 0 24px 70px rgba(11, 19, 35, 0.36);
+}
+
+.login-card h1 {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.login-card .lead,
+.login-feedback {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.login-form {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.login-form input {
+  min-height: 52px;
+  padding: 0 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  font: inherit;
+}
+
+.login-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.login-feedback {
+  margin: 14px 0 0;
+}
+
 .page-copy h1 {
   margin: 0;
   font-family: "Outfit", sans-serif;
@@ -865,6 +969,57 @@ button {
   line-height: 1.7;
 }
 
+.home-reward-feedback {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.import-panel {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(17, 32, 56, 0.05);
+}
+
+.import-copy strong {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.1rem;
+}
+
+.import-copy p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.import-controls {
+  display: grid;
+  gap: 10px;
+}
+
+.import-controls input[type="file"],
+.import-controls textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 32, 56, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text);
+  font: inherit;
+}
+
+.import-controls input[type="file"] {
+  padding: 12px 14px;
+}
+
+.import-controls textarea {
+  padding: 12px 14px;
+  resize: vertical;
+}
+
 .stat-chip,
 .student-card,
 .rank-list li {
@@ -1002,8 +1157,17 @@ button {
   background: linear-gradient(135deg, #ff7448, #ff9147);
 }
 
+.student-card button.student-profile-trigger {
+  background: rgba(17, 32, 56, 0.06);
+}
+
 .student-pet {
   --pet-size: 88px;
+}
+
+.student-pet.pet-asset {
+  width: 104px;
+  height: 104px;
 }
 
 .console-side {
@@ -1093,6 +1257,112 @@ button {
   gap: 18px;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.student-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 180ms ease,
+    visibility 180ms ease;
+}
+
+.student-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.student-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 16, 30, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+.student-modal-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(680px, 100%);
+  padding: 26px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(180deg, rgba(13, 23, 37, 0.97), rgba(21, 32, 52, 0.94)),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent);
+  color: var(--white);
+  box-shadow: 0 28px 80px rgba(11, 19, 35, 0.42);
+}
+
+.student-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.student-modal-content h3 {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 2rem;
+}
+
+.student-modal-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 22px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.student-modal-stage {
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.student-modal-stage .student-pet {
+  margin: 0 auto;
+  --pet-size: 110px;
+}
+
+.student-modal-stage .student-pet.pet-asset {
+  width: 132px;
+  height: 132px;
+}
+
+.student-modal-meta {
+  display: grid;
+  gap: 14px;
+}
+
+.student-modal-meta p,
+.student-modal-metrics li,
+.student-modal-log li {
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.8;
+}
+
+.student-modal-metrics,
+.student-modal-log {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.student-modal-log {
+  display: grid;
+  gap: 8px;
 }
 
 .feature-card p,
@@ -1301,7 +1571,8 @@ button {
   .architecture-grid,
   .split-section,
   .console-layout,
-  .page-hero {
+  .page-hero,
+  .import-panel {
     grid-template-columns: 1fr;
   }
 
@@ -1359,6 +1630,10 @@ button {
   .student-actions {
     grid-template-columns: 1fr;
     flex-direction: column;
+  }
+
+  .student-modal-grid {
+    grid-template-columns: 1fr;
   }
 
   .pet-panel,

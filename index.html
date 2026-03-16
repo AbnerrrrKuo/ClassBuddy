@@ -73,10 +73,8 @@
               </div>
               <div class="pet-panel">
                 <div class="pet-illustration">
-                  <div class="pet pet-stage-2" id="heroPet" data-evolution="2">
-                    <span class="pet-face pet-face-left"></span>
-                    <span class="pet-face pet-face-right"></span>
-                    <span class="pet-core"></span>
+                  <div class="pet pet-asset" id="heroPet" data-evolution="2">
+                    <img class="pet-image" id="heroPetImage" src="assets/pets/rescue-dog-2.svg" alt="课堂宠物形象" />
                   </div>
                 </div>
                 <div class="pet-details">
@@ -91,12 +89,15 @@
                   </div>
                 </div>
               </div>
-              <div class="reward-grid">
-                <button type="button">积极发言 +10</button>
-                <button type="button">作业优秀 +20</button>
-                <button type="button">小组协作 +15</button>
-                <button type="button">遵守纪律 +5</button>
+              <div class="reward-grid reward-grid-home">
+                <button type="button" data-home-reward-points="10" data-home-reward-label="积极发言">积极发言 +10</button>
+                <button type="button" data-home-reward-points="20" data-home-reward-label="作业优秀">作业优秀 +20</button>
+                <button type="button" data-home-reward-points="15" data-home-reward-label="小组协作">小组协作 +15</button>
+                <button type="button" data-home-reward-points="5" data-home-reward-label="遵守纪律">遵守纪律 +5</button>
               </div>
+              <p class="reward-feedback home-reward-feedback" id="homeRewardFeedback">
+                首页奖励会直接作用到当前“今日课堂伙伴”，并与教师后台保持一致。
+              </p>
               <div class="hall-card">
                 <div class="hall-head">
                   <strong>Hall of Fame</strong>
@@ -199,10 +200,8 @@
               </div>
               <div class="evolution-stage">
                 <div class="pet-stage-screen">
-                  <div class="pet" id="demoPet">
-                    <span class="pet-face pet-face-left"></span>
-                    <span class="pet-face pet-face-right"></span>
-                    <span class="pet-core"></span>
+                  <div class="pet pet-asset" id="demoPet">
+                    <img class="pet-image" id="demoPetImage" src="assets/pets/rescue-dog-1.svg" alt="宠物进化演示" />
                   </div>
                   <div class="stage-glow"></div>
                 </div>
